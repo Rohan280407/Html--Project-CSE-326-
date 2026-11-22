@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>VetCare | Appointments</title>
+
+    <link rel="stylesheet" href="doctor.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="dashboard-container">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="logo">
+          <span class="logo-icon">🐾</span>
+          <span>VetCare</span>
+        </div>
+
+        <div class="nav-section">
+          <p class="nav-heading">MAIN MENU</p>
+
+          <a href="doctor.html" class="nav-link">
+            <span class="nav-icon">▦</span>
+            <span>Dashboard</span>
+          </a>
+
+          <a href="patient.html" class="nav-link">
+            <span class="nav-icon">🐾</span>
+            <span>Patient</span>
+          </a>
+
+          <a href="appointment.html" class="nav-link active">
+            <span class="nav-icon">▣</span>
+            <span>Appointment</span>
+          </a>
+
+          <a href="prescription.html" class="nav-link">
+            <span class="nav-icon">✚</span>
+            <span>Prescription</span>
+          </a>
+        </div>
+
+        <div class="sidebar-bottom">
+          <a href="../index.html" class="home-link">
+            <span class="nav-icon">⌂</span>
+            <span>Go to Home</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <!-- TOP BAR -->
+        <header class="topbar">
+          <div>
+            <h2>Appointments</h2>
+            <p>Manage pet appointments and scheduled visits</p>
+          </div>
+
+          <div class="topbar-right">
+            <span class="today-label">Doctor Panel</span>
+          </div>
+        </header>
+
+        <!-- PAGE INTRODUCTION -->
+        <section class="appointment-heading">
+          <h1>Appointment Management 📅</h1>
+
+          <p>View scheduled appointments, pet details and owner information.</p>
+        </section>
+
+        <!-- APPOINTMENT SUMMARY -->
+        <section class="appointment-summary">
+          <div class="summary-box">
+            <div class="summary-icon">📅</div>
+            <p>Total Appointments</p>
+            <h2>24</h2>
+          </div>
+
+          <div class="summary-box">
+            <div class="summary-icon">⏰</div>
+            <p>Today's Appointments</p>
+            <h2>06</h2>
+          </div>
+
+          <div class="summary-box">
+            <div class="summary-icon">✓</div>
+            <p>Completed</p>
+            <h2>14</h2>
+          </div>
+
+          <div class="summary-box">
+            <div class="summary-icon">⌛</div>
+            <p>Pending</p>
+            <h2>10</h2>
+          </div>
+        </section>
+
+        <!-- TODAY'S SCHEDULE -->
+        <section class="content-card schedule-section">
+          <div class="section-header">
+            <div>
+              <h3>Today's Schedule</h3>
+              <p>Appointments scheduled for today</p>
+            </div>
+          </div>
+
+          <div class="schedule-grid">
+            <div class="schedule-card">
+              <div class="schedule-time">10:00 AM</div>
+
+              <div class="schedule-pet">
+                <span>🐕</span>
+                <div>
+                  <h4>Bruno</h4>
+                  <p>Golden Retriever</p>
+                </div>
+              </div>
+
+              <div class="schedule-owner">Owner: Rahul Sharma</div>
+
+              <span class="status-badge pending">Pending</span>
+            </div>
+
+            <div class="schedule-card">
+              <div class="schedule-time">11:30 AM</div>
+
+              <div class="schedule-pet">
+                <span>🐈</span>
+                <div>
+                  <h4>Milo</h4>
+                  <p>Persian Cat</p>
+                </div>
+              </div>
+
+              <div class="schedule-owner">Owner: Priya Verma</div>
+
+              <span class="status-badge completed">Completed</span>
+            </div>
+
+            <div class="schedule-card">
+              <div class="schedule-time">02:00 PM</div>
+
+              <div class="schedule-pet">
+                <span>🐶</span>
+                <div>
+                  <h4>Coco</h4>
+                  <p>Labrador</p>
+                </div>
+              </div>
+
+              <div class="schedule-owner">Owner: Aman Gupta</div>
+
+              <span class="status-badge pending">Pending</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ALL APPOINTMENTS -->
+        <section class="content-card all-appointments">
+          <div class="section-header">
+            <div>
+              <h3>All Appointments</h3>
+              <p>Complete appointment records</p>
+            </div>
+          </div>
+
+          <div class="appointment-table-wrapper">
+            <table class="appointment-table">
+              <thead>
+                <tr>
+                  <th>APPOINTMENT ID</th>
+                  <th>PET DETAILS</th>
+                  <th>OWNER DETAILS</th>
+                  <th>DATE</th>
+                  <th>TIME</th>
+                  <th>REASON</th>
+                  <th>STATUS</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>#APT001</td>
+
+                  <td>
+                    <div class="appointment-pet">
+                      <span>🐕</span>
+                      <div>
+                        <strong>Bruno</strong>
+                        <small>Golden Retriever</small>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="appointment-owner">
+                      <strong>Rahul Sharma</strong>
+                      <small>9876543210</small>
+                    </div>
+                  </td>
+
+                  <td>22 Nov 2026</td>
+                  <td>10:00 AM</td>
+                  <td>General Checkup</td>
+
+                  <td>
+                    <span class="status-badge pending">Pending</span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>#APT002</td>
+
+                  <td>
+                    <div class="appointment-pet">
+                      <span>🐈</span>
+                      <div>
+                        <strong>Milo</strong>
+                        <small>Persian Cat</small>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="appointment-owner">
+                      <strong>Priya Verma</strong>
+                      <small>9876501234</small>
+                    </div>
+                  </td>
+
+                  <td>22 Nov 2026</td>
+                  <td>11:30 AM</td>
+                  <td>Skin Examination</td>
+
+                  <td>
+                    <span class="status-badge completed">Completed</span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>#APT003</td>
+
+                  <td>
+                    <div class="appointment-pet">
+                      <span>🐶</span>
+                      <div>
+                        <strong>Coco</strong>
+                        <small>Labrador</small>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="appointment-owner">
+                      <strong>Aman Gupta</strong>
+                      <small>9876512345</small>
+                    </div>
+                  </td>
+
+                  <td>22 Nov 2026</td>
+                  <td>02:00 PM</td>
+                  <td>Vaccination</td>
+
+                  <td>
+                    <span class="status-badge pending">Pending</span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>#APT004</td>
+
+                  <td>
+                    <div class="appointment-pet">
+                      <span>🐇</span>
+                      <div>
+                        <strong>Snowy</strong>
+                        <small>White Rabbit</small>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="appointment-owner">
+                      <strong>Neha Singh</strong>
+                      <small>9876523456</small>
+                    </div>
+                  </td>
+
+                  <td>23 Nov 2026</td>
+                  <td>09:30 AM</td>
+                  <td>General Checkup</td>
+
+                  <td>
+                    <span class="status-badge pending">Pending</span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>#APT005</td>
+
+                  <td>
+                    <div class="appointment-pet">
+                      <span>🐕</span>
+                      <div>
+                        <strong>Rocky</strong>
+                        <small>German Shepherd</small>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="appointment-owner">
+                      <strong>Vikram Mehta</strong>
+                      <small>9876534567</small>
+                    </div>
+                  </td>
+
+                  <td>24 Nov 2026</td>
+                  <td>12:00 PM</td>
+                  <td>Health Examination</td>
+
+                  <td>
+                    <span class="status-badge pending">Pending</span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>#APT006</td>
+
+                  <td>
+                    <div class="appointment-pet">
+                      <span>🐈</span>
+                      <div>
+                        <strong>Luna</strong>
+                        <small>British Shorthair</small>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="appointment-owner">
+                      <strong>Anjali Kapoor</strong>
+                      <small>9876543211</small>
+                    </div>
+                  </td>
+
+                  <td>25 Nov 2026</td>
+                  <td>03:30 PM</td>
+                  <td>Dental Checkup</td>
+
+                  <td>
+                    <span class="status-badge completed">Completed</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+          <p>© 2026 VetCare | Veterinary Management System</p>
+
+          <p>Taking care of every paw 🐾</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

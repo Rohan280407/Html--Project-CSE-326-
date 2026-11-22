@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pet Owner Section - Veterinary Clinic System</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f4f8;
+        color: #222;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 950px;
+        margin: auto;
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Back Button */
+      .back-button {
+        display: inline-block;
+        background-color: #2d6a4f;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-bottom: 15px;
+        transition: background-color 0.3s ease;
+      }
+
+      .back-button:hover {
+        background-color: #1b4332;
+      }
+
+      h1 {
+        text-align: center;
+        color: #1b4332;
+      }
+
+      h2 {
+        color: #2d6a4f;
+        border-bottom: 2px solid #95d5b2;
+        padding-bottom: 5px;
+        margin-top: 30px;
+      }
+
+      /* Search Bar and Counter */
+      .header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+      }
+
+      .search-box input {
+        padding: 8px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        width: 250px;
+        max-width: 100%;
+      }
+
+      .counter-badge {
+        background-color: #2d6a4f;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 12px;
+        font-size: 0.9em;
+      }
+
+      /* Reviews Grid */
+      .reviews-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 15px;
+      }
+
+      .card {
+        background-color: #f8f9fa;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        padding: 15px;
+        text-align: center;
+      }
+
+      .card img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #2d6a4f;
+      }
+
+      blockquote {
+        font-style: italic;
+        margin: 12px 0;
+        color: #495057;
+      }
+
+      /* Medical History Table */
+      .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        min-width: 650px;
+      }
+
+      th,
+      td {
+        border: 1px solid #adb5bd;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #2d6a4f;
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: #e9ecef;
+      }
+
+      /* Add Pet Form */
+      .form-inline {
+        background-color: #f1faee;
+        padding: 15px;
+        border: 1px solid #a8dadc;
+        border-radius: 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .form-inline input {
+        padding: 8px;
+        width: 100%;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      /* Cost Estimator */
+      .estimator-section {
+        background-color: #fff8e1;
+        padding: 20px;
+        border: 2px dashed #ffe082;
+        border-radius: 6px;
+        margin-top: 15px;
+      }
+
+      /* Upload Section */
+      .upload-section {
+        background-color: #e8f5e9;
+        padding: 20px;
+        border: 2px dashed #40916c;
+        border-radius: 6px;
+        margin-top: 15px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      select,
+      input[type="file"] {
+        padding: 8px;
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        background-color: #2d6a4f;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 15px;
+        margin-top: 5px;
+      }
+
+      button:hover {
+        background-color: #1b4332;
+      }
+
+      #prescription-box,
+      #estimate-result {
+        display: none;
+        margin-top: 15px;
+        padding: 15px;
+        border-radius: 4px;
+      }
+
+      #prescription-box {
+        background-color: #fff3cd;
+        border-left: 5px solid #ffc107;
+      }
+
+      #estimate-result {
+        background-color: #ffebee;
+        border-left: 5px solid #ef5350;
+        color: #b71c1c;
+        font-weight: bold;
+      }
+
+      /* Additional Tools */
+      #owner-extra-section {
+        margin-top: 30px;
+      }
+
+      .extra-link {
+        display: inline-block;
+        background-color: #0000ff;
+        color: white;
+        padding: 8px 14px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .extra-link:hover {
+        background-color: #0000aa;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+
+        .container {
+          padding: 15px;
+        }
+
+        .reviews-box,
+        .form-inline {
+          grid-template-columns: 1fr;
+        }
+
+        .search-box input {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- BACK TO HOME BUTTON -->
+      <a href="../index.html" class="back-button"> ← Back to Home </a>
+
+      <h1>Pet Owner Portal</h1>
+
+      <!-- 1. PET OWNER REVIEWS -->
+      <h2>1. Pet Owner Reviews</h2>
+
+      <div class="reviews-box">
+        <div class="card">
+          <img src="images_good/bruno.jpg" alt="Bruno the dog" />
+
+          <blockquote>
+            <q>
+              Quick diagnosis and great care for Bruno. His recovery was super
+              smooth!
+            </q>
+          </blockquote>
+
+          <p><strong>- Rahul Sharma (Dog Owner)</strong></p>
+        </div>
+
+        <div class="card">
+          <img src="images_good/bella.jpg" alt="Bella the cat" />
+
+          <blockquote>
+            <q>
+              Tracking Bella's rabies vaccination and medical records here is
+              effortless.
+            </q>
+          </blockquote>
+
+          <p><strong>- Sneha Verma (Cat Owner)</strong></p>
+        </div>
+      </div>
+
+      <!-- 2. PET MEDICAL HISTORY -->
+      <h2>2. Pet Medical History</h2>
+
+      <div class="header-row">
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            oninput="searchTable()"
+            placeholder="Search owner or pet..."
+          />
+        </div>
+
+        <div class="counter-badge">
+          Total Records: <span id="recordCount">2</span>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table id="medicalTable">
+          <thead>
+            <tr>
+              <th>Owner Name</th>
+              <th>Pet Name</th>
+              <th>Weight</th>
+              <th>Allergies</th>
+              <th>Rabies Vaccination</th>
+              <th>Spayed / Neutered</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Rahul Sharma</td>
+              <td>Bruno (Dog)</td>
+              <td>26 kg</td>
+              <td>Chicken</td>
+              <td>Done (2026)</td>
+              <td>Neutered</td>
+            </tr>
+
+            <tr>
+              <td>Sneha Verma</td>
+              <td>Bella (Cat)</td>
+              <td>4.5 kg</td>
+              <td>None</td>
+              <td>Done (2026)</td>
+              <td>Spayed</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ADD NEW PET RECORD FORM -->
+      <div class="form-inline">
+        <div>
+          <label for="newOwner">Owner Name:</label>
+          <input type="text" id="newOwner" placeholder="e.g., Amit Kumar" />
+
+          <label for="newPet">Pet Name & Type:</label>
+          <input type="text" id="newPet" placeholder="e.g., Rocky (Dog)" />
+
+          <label for="newWeight">Weight:</label>
+          <input type="text" id="newWeight" placeholder="e.g., 18 kg" />
+        </div>
+
+        <div>
+          <label for="newAllergy">Allergies:</label>
+          <input type="text" id="newAllergy" placeholder="e.g., Dust" />
+
+          <label for="newVax">Rabies Vaccination:</label>
+          <input type="text" id="newVax" placeholder="e.g., Done (2026)" />
+
+          <label for="newStatus">Spayed/Neutered:</label>
+          <input type="text" id="newStatus" placeholder="e.g., Neutered" />
+        </div>
+      </div>
+
+      <button type="button" onclick="addMedicalRow()">
+        Add New Pet Record to Table
+      </button>
+
+      <!-- 3. QUICK COST ESTIMATOR -->
+      <h2>Quick Service Cost Estimator</h2>
+
+      <div class="estimator-section">
+        <label for="serviceSelect"> Select Veterinary Service: </label>
+
+        <select id="serviceSelect">
+          <option value="500">General Consultation - ₹500</option>
+          <option value="1200">Rabies Vaccination - ₹1,200</option>
+          <option value="2500">Diagnostic Blood Test - ₹2,500</option>
+          <option value="5000">Minor Surgery / Treatment - ₹5,000</option>
+        </select>
+
+        <button type="button" onclick="calculateCost()">
+          Calculate Estimated Cost
+        </button>
+
+        <div id="estimate-result"></div>
+      </div>
+
+      <!-- 4. UPLOAD DIAGNOSTIC REPORT -->
+      <h2>3. Upload Diagnostic Report & Get Prescription</h2>
+
+      <div class="upload-section">
+        <label for="ownerName"> Enter Pet Owner Name: </label>
+
+        <input type="text" id="ownerName" placeholder="e.g., Rahul Sharma" />
+
+        <label for="reportFile">
+          Upload Previous Diagnostic Report (JPG/PDF):
+        </label>
+
+        <input type="file" id="reportFile" accept=".jpg,.jpeg,.png,.pdf" />
+
+        <br />
+
+        <button type="button" onclick="handleUpload()">
+          Upload & View Report Status
+        </button>
+
+        <div id="prescription-box">
+          <h3>Report Uploaded Successfully!</h3>
+
+          <p id="status-message"></p>
+
+          <p>
+            <strong>Note:</strong>
+            This is a demonstration upload confirmation. A real prescription
+            must be prepared and approved by a qualified veterinarian.
+          </p>
+        </div>
+      </div>
+
+      <!-- ADDITIONAL PET OWNER TOOLS -->
+      <section id="owner-extra-section">
+        <h2>Additional Pet Owner Tools</h2>
+
+        <p style="margin-bottom: 12px">
+          <a href="owner1.html" class="extra-link">
+            Additional Pet Owner Tools
+          </a>
+        </p>
+      </section>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+      // 1. ADD NEW MEDICAL RECORD
+      function addMedicalRow() {
+        let owner = document.getElementById("newOwner").value.trim();
+        let pet = document.getElementById("newPet").value.trim();
+        let weight = document.getElementById("newWeight").value.trim();
+        let allergy = document.getElementById("newAllergy").value.trim();
+        let vax = document.getElementById("newVax").value.trim();
+        let status = document.getElementById("newStatus").value.trim();
+
+        if (owner === "" || pet === "") {
+          alert("Please fill at least the Owner Name and Pet Name!");
+          return;
+        }
+
+        let table = document
+          .getElementById("medicalTable")
+          .getElementsByTagName("tbody")[0];
+
+        let newRow = table.insertRow();
+
+        let values = [owner, pet, weight, allergy, vax, status];
+
+        values.forEach(function (value) {
+          let cell = newRow.insertCell();
+          cell.textContent = value;
+        });
+
+        updateRecordCount();
+
+        // Clear input fields
+        document.getElementById("newOwner").value = "";
+        document.getElementById("newPet").value = "";
+        document.getElementById("newWeight").value = "";
+        document.getElementById("newAllergy").value = "";
+        document.getElementById("newVax").value = "";
+        document.getElementById("newStatus").value = "";
+
+        // Apply current search filter
+        searchTable();
+
+        alert("New pet record added successfully!");
+      }
+
+      // 2. UPDATE RECORD COUNTER
+      function updateRecordCount() {
+        let table = document.getElementById("medicalTable");
+
+        let totalRows = table.tBodies[0].rows.length;
+
+        document.getElementById("recordCount").textContent = totalRows;
+      }
+
+      // 3. SEARCH MEDICAL RECORDS
+      function searchTable() {
+        let input = document.getElementById("searchInput");
+
+        let filter = input.value.toLowerCase();
+
+        let table = document.getElementById("medicalTable");
+
+        let rows = table.tBodies[0].rows;
+
+        for (let i = 0; i < rows.length; i++) {
+          let owner = rows[i].cells[0].textContent.toLowerCase();
+
+          let pet = rows[i].cells[1].textContent.toLowerCase();
+
+          if (owner.includes(filter) || pet.includes(filter)) {
+            rows[i].style.display = "";
+          } else {
+            rows[i].style.display = "none";
+          }
+        }
+      }
+
+      // 4. QUICK COST ESTIMATOR
+      function calculateCost() {
+        let selectBox = document.getElementById("serviceSelect");
+
+        let cost = Number(selectBox.value);
+
+        let serviceName = selectBox.options[selectBox.selectedIndex].text;
+
+        let resultDiv = document.getElementById("estimate-result");
+
+        resultDiv.textContent =
+          "Estimated Cost for " +
+          serviceName +
+          " is ₹" +
+          cost.toLocaleString("en-IN") +
+          ".";
+
+        resultDiv.style.display = "block";
+      }
+
+      // 5. HANDLE DIAGNOSTIC REPORT UPLOAD
+      function handleUpload() {
+        let owner = document.getElementById("ownerName").value.trim();
+
+        let fileInput = document.getElementById("reportFile");
+
+        let prescriptionBox = document.getElementById("prescription-box");
+
+        let statusMsg = document.getElementById("status-message");
+
+        if (owner === "" || fileInput.files.length === 0) {
+          alert(
+            "Please enter the Pet Owner Name and select a diagnostic report file first!",
+          );
+
+          return;
+        }
+
+        let file = fileInput.files[0];
+
+        let allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
+
+        if (!allowedTypes.includes(file.type)) {
+          alert("Please upload a JPG, PNG or PDF file.");
+          return;
+        }
+
+        let maxSize = 10 * 1024 * 1024;
+
+        if (file.size > maxSize) {
+          alert("File size must be less than 10 MB.");
+          return;
+        }
+
+        statusMsg.textContent =
+          "Owner: " + owner + " | Uploaded File: " + file.name;
+
+        prescriptionBox.style.display = "block";
+      }
+
+      // INITIALIZE RECORD COUNTER
+      updateRecordCount();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Vet Care | Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <aside class="sidebar">
+      <div class="brand">🐾Vet Care</div>
+      <p>Veterinary Clinic Management</p>
+      <nav>
+        <a class="active" href="index.html">Dashboard</a
+        ><a class="" href="owners.html">Owners</a
+        ><a class="" href="pets.html">Pets</a
+        ><a class="" href="appointments.html">Appointments</a
+        ><a class="" href="billing.html">Billing</a
+        ><a class="" href="reports.html">Reports</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="top">
+        <h1>Dashboard</h1>
+        <p>Welcome to the VetCare clinic.</p>
+      </header>
+      <div class="cards">
+        <div class="card">
+          <h3>Registered Owners</h3>
+          <strong>4</strong>
+        </div>
+        <div class="card">
+          <h3>Pets</h3>
+          <strong>5</strong>
+        </div>
+        <div class="card">
+          <h3>Appointments Today</h3>
+          <strong>4</strong>
+        </div>
+        <div class="card">
+          <h3>Sample Revenue</h3>
+          <strong>₹12,450</strong>
+        </div>
+      </div>
+      <section class="panel">
+        <h2>Today's Appointments</h2>
+        <div class="tablewrap">
+          <table>
+            <tr>
+              <th>Pet</th>
+              <th>Owner</th>
+              <th>Doctor</th>
+              <th>Time</th>
+              <th>Status</th>
+            </tr>
+            <tr>
+              <td>Buddy</td>
+              <td>Rahul Sharma</td>
+              <td>Dr. Meera</td>
+              <td>10:00 AM</td>
+              <td><span class="tag">Completed</span></td>
+            </tr>
+            <tr>
+              <td>Kitty</td>
+              <td>Ananya Singh</td>
+              <td>Dr. Meera</td>
+              <td>11:30 AM</td>
+              <td><span class="tag pending">Waiting</span></td>
+            </tr>
+            <tr>
+              <td>Max</td>
+              <td>Vikram Das</td>
+              <td>Dr. Arjun</td>
+              <td>1:00 PM</td>
+              <td><span class="tag pending">Upcoming</span></td>
+            </tr>
+            <tr>
+              <td>Snowy</td>
+              <td>Priya Jain</td>
+              <td>Dr. Arjun</td>
+              <td>3:00 PM</td>
+              <td><span class="tag">Completed</span></td>
+            </tr>
+          </table>
+        </div>
+        <p class="note">
+          This dashboard shows sample figures for demonstration.
+        </p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

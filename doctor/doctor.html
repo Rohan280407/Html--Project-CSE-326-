@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>VetCare | Doctor Dashboard</title>
+
+    <link rel="stylesheet" href="doctor.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="dashboard-container">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="logo">
+          <span class="logo-icon">🐾</span>
+          <span>VetCare</span>
+        </div>
+
+        <div class="nav-section">
+          <p class="nav-heading">MAIN MENU</p>
+
+          <a href="doctor.html" class="nav-link active">
+            <span class="nav-icon">▦</span>
+            <span>Dashboard</span>
+          </a>
+
+          <a href="patient.html" class="nav-link">
+            <span class="nav-icon">🐾</span>
+            <span>Patient</span>
+          </a>
+
+          <a href="appointment.html" class="nav-link">
+            <span class="nav-icon">▣</span>
+            <span>Appointment</span>
+          </a>
+
+          <a href="prescription.html" class="nav-link">
+            <span class="nav-icon">✚</span>
+            <span>Prescription</span>
+          </a>
+        </div>
+
+        <!-- GO TO HOME -->
+        <div class="sidebar-bottom">
+          <a href="../index.html" class="home-link">
+            <span class="nav-icon">⌂</span>
+            <span>Go to Home</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <!-- TOP BAR -->
+        <header class="topbar">
+          <div>
+            <h2>Dashboard</h2>
+            <p>Welcome to VetCare Doctor Panel</p>
+          </div>
+
+          <div class="topbar-right">
+            <span class="today-label">Doctor Panel</span>
+          </div>
+        </header>
+
+        <!-- WELCOME SECTION -->
+        <section class="welcome-section">
+          <div class="welcome-text">
+            <h1>Welcome to VetCare! 🐾</h1>
+
+            <p>
+              Manage your pet patients, appointments and prescriptions all in
+              one place.
+            </p>
+          </div>
+
+          <div class="welcome-icon">🐶</div>
+        </section>
+
+        <!-- STATISTICS -->
+        <section class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon appointment-icon">▣</div>
+
+            <div>
+              <p>Total Appointments</p>
+              <h2>24</h2>
+              <span>All scheduled appointments</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon today-icon">◷</div>
+
+            <div>
+              <p>Today's Appointments</p>
+              <h2>06</h2>
+              <span>Scheduled for today</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon patient-icon">🐾</div>
+
+            <div>
+              <p>Total Pet Patients</p>
+              <h2>18</h2>
+              <span>Registered pet patients</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon prescription-icon">✚</div>
+
+            <div>
+              <p>Prescriptions Issued</p>
+              <h2>12</h2>
+              <span>Total prescriptions created</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- LOWER CONTENT -->
+        <section class="dashboard-grid">
+          <!-- UPCOMING APPOINTMENTS -->
+          <div class="content-card">
+            <div class="section-header">
+              <div>
+                <h3>Upcoming Appointments</h3>
+                <p>Recently scheduled pet visits</p>
+              </div>
+
+              <a href="appointment.html" class="view-link"> View All → </a>
+            </div>
+
+            <div class="appointment-list">
+              <div class="appointment-item">
+                <div class="pet-avatar">🐕</div>
+
+                <div class="pet-info">
+                  <h4>Bruno</h4>
+                  <p>Golden Retriever</p>
+                </div>
+
+                <div class="appointment-time">
+                  <strong>10:00 AM</strong>
+                  <span>Today</span>
+                </div>
+              </div>
+
+              <div class="appointment-item">
+                <div class="pet-avatar">🐈</div>
+
+                <div class="pet-info">
+                  <h4>Milo</h4>
+                  <p>Persian Cat</p>
+                </div>
+
+                <div class="appointment-time">
+                  <strong>11:30 AM</strong>
+                  <span>Today</span>
+                </div>
+              </div>
+
+              <div class="appointment-item">
+                <div class="pet-avatar">🐶</div>
+
+                <div class="pet-info">
+                  <h4>Coco</h4>
+                  <p>Labrador</p>
+                </div>
+
+                <div class="appointment-time">
+                  <strong>02:00 PM</strong>
+                  <span>Tomorrow</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RECENT PATIENTS -->
+          <div class="content-card">
+            <div class="section-header">
+              <div>
+                <h3>Recent Patients</h3>
+                <p>Recently registered pets</p>
+              </div>
+
+              <a href="patient.html" class="view-link"> View All → </a>
+            </div>
+
+            <div class="patient-list">
+              <div class="patient-item">
+                <div class="pet-avatar">🐕</div>
+
+                <div class="pet-info">
+                  <h4>Bruno</h4>
+                  <p>Golden Retriever</p>
+                </div>
+
+                <span class="status-badge active"> Active </span>
+              </div>
+
+              <div class="patient-item">
+                <div class="pet-avatar">🐈</div>
+
+                <div class="pet-info">
+                  <h4>Milo</h4>
+                  <p>Persian Cat</p>
+                </div>
+
+                <span class="status-badge active"> Active </span>
+              </div>
+
+              <div class="patient-item">
+                <div class="pet-avatar">🐶</div>
+
+                <div class="pet-info">
+                  <h4>Coco</h4>
+                  <p>Labrador</p>
+                </div>
+
+                <span class="status-badge active"> Active </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+          <p>© 2026 VetCare | Veterinary Management System</p>
+          <p>Taking care of every paw 🐾</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

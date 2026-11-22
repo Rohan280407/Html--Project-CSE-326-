@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Extra Tools - Veterinary Clinic</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5faf8;
+            color: #193b35;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .box {
+            max-width: 900px;
+            width: 100%;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e5eeeb;
+            box-shadow: 0 4px 15px rgba(25, 59, 53, 0.06);
+        }
+
+        /* BACK BUTTON */
+
+        .back-button {
+            display: inline-block;
+            background-color: #2d6a4f;
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 25px;
+            transition: background-color 0.2s ease;
+        }
+
+        .back-button:hover {
+            background-color: #176b59;
+        }
+
+        h2 {
+            color: #176b59;
+            border-bottom: 2px solid #95d5b2;
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 21px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 7px;
+            color: #193b35;
+        }
+
+        input, select, textarea {
+            display: block;
+            width: 100%;
+            max-width: 450px;
+            padding: 11px;
+            border: 1px solid #cbdcd5;
+            border-radius: 6px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            background-color: #ffffff;
+            color: #193b35;
+            outline: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #1b856d;
+            box-shadow: 0 0 0 3px rgba(27, 133, 109, 0.10);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 85px;
+        }
+
+        button {
+            margin-top: 15px;
+            background-color: #1b856d;
+            color: #ffffff;
+            border: none;
+            padding: 11px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #176b59;
+        }
+
+        ul {
+            margin-top: 15px;
+            padding-left: 25px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+            padding: 8px;
+            background-color: #f5faf8;
+            border-radius: 5px;
+        }
+
+        hr {
+            margin: 30px 0;
+            border: 0;
+            border-top: 1px solid #e5eeeb;
+        }
+
+        .feedback-output {
+            display: none;
+            margin-top: 18px;
+            padding: 15px;
+            background-color: #e5f5ef;
+            border-left: 4px solid #1b856d;
+            border-radius: 6px;
+            line-height: 1.6;
+            overflow-wrap: anywhere;
+        }
+
+        .section-description {
+            color: #647772;
+            font-size: 14px;
+            margin-top: -3px;
+            margin-bottom: 18px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .box {
+                padding: 18px;
+                margin: 10px auto;
+            }
+
+            h2 {
+                font-size: 19px;
+            }
+
+            input, select, textarea {
+                max-width: 100%;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            .back-button {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <!-- BACK TO OWNER PORTAL BUTTON -->
+
+    <a href="owner.html" class="back-button">
+        ← Back to Owner Portal
+    </a>
+
+    <!-- FEATURE A: DAILY FEEDING AND DIET SCHEDULE -->
+
+    <h2>Daily Feeding &amp; Diet Schedule</h2>
+
+    <p class="section-description">
+        Keep track of your pet's daily meals and food requirements.
+    </p>
+
+    <label for="petDietName">Pet Name:</label>
+
+    <input
+        type="text"
+        id="petDietName"
+        placeholder="e.g., Bruno"
+    >
+
+    <label for="mealTime">Meal Time:</label>
+
+    <select id="mealTime">
+        <option value="Morning (8:00 AM)">Morning (8:00 AM)</option>
+        <option value="Afternoon (1:30 PM)">Afternoon (1:30 PM)</option>
+        <option value="Evening (7:30 PM)">Evening (7:30 PM)</option>
+    </select>
+
+    <label for="foodItem">Food / Supplement:</label>
+
+    <input
+        type="text"
+        id="foodItem"
+        placeholder="e.g., Boiled rice + vet kibble"
+    >
+
+    <button type="button" onclick="addDietItem()">
+        + Add to Feeding List
+    </button>
+
+    <ul id="dietList">
+        <li>
+            <strong>Bruno</strong> — Morning (8:00 AM):
+            Vet kibble &amp; fresh water
+        </li>
+    </ul>
+
+    <hr>
+
+    <!-- FEATURE B: QUICK OWNER RATING AND FEEDBACK -->
+
+    <h2>Submit Quick Care Feedback</h2>
+
+    <p class="section-description">
+        Share your experience and send a note to the veterinary team.
+    </p>
+
+    <label for="ratingSelect">Clinic Experience Rating:</label>
+
+    <select id="ratingSelect">
+        <option value="5 Stars - Excellent">5 Stars - Excellent</option>
+        <option value="4 Stars - Very Good">4 Stars - Very Good</option>
+        <option value="3 Stars - Good">3 Stars - Good</option>
+        <option value="2 Stars - Fair">2 Stars - Fair</option>
+        <option value="1 Star - Poor">1 Star - Poor</option>
+    </select>
+
+    <label for="ownerNote">Short Note for Vet Team:</label>
+
+    <textarea
+        id="ownerNote"
+        rows="3"
+        placeholder="Write recovery update or question..."
+    ></textarea>
+
+    <button type="button" onclick="saveFeedback()">
+        Save Feedback
+    </button>
+
+    <div id="feedbackBox" class="feedback-output"></div>
+
+</div>
+
+<script>
+
+    // ADD NEW FEEDING ITEM
+
+    function addDietItem() {
+
+        const petInput = document.getElementById("petDietName");
+        const foodInput = document.getElementById("foodItem");
+        const mealInput = document.getElementById("mealTime");
+
+        const pet = petInput.value.trim();
+        const food = foodInput.value.trim();
+        const meal = mealInput.value;
+
+        if (!pet || !food) {
+            alert("Please enter both Pet Name and Food/Supplement!");
+            return;
+        }
+
+        const li = document.createElement("li");
+
+        const strong = document.createElement("strong");
+        strong.textContent = pet;
+
+        li.appendChild(strong);
+
+        li.appendChild(
+            document.createTextNode(" — " + meal + ": " + food)
+        );
+
+        document.getElementById("dietList").appendChild(li);
+
+        petInput.value = "";
+        foodInput.value = "";
+
+    }
+
+    // SAVE OWNER FEEDBACK
+
+    function saveFeedback() {
+
+        const rating = document.getElementById("ratingSelect").value;
+        const noteInput = document.getElementById("ownerNote");
+
+        const note = noteInput.value.trim();
+
+        const box = document.getElementById("feedbackBox");
+
+        if (!note) {
+            alert("Please write a short note first!");
+            return;
+        }
+
+        box.replaceChildren();
+
+        const heading = document.createElement("strong");
+        heading.textContent = "Feedback Recorded!";
+
+        const ratingText = document.createElement("p");
+        ratingText.textContent = "Rating: " + rating;
+
+        const noteText = document.createElement("p");
+        noteText.textContent = "Note: " + note;
+
+        box.appendChild(heading);
+        box.appendChild(ratingText);
+        box.appendChild(noteText);
+
+        box.style.display = "block";
+
+        noteInput.value = "";
+
+    }
+
+</script>
+
+</body>
+</html>

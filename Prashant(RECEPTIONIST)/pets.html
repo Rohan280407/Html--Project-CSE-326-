@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PetCare | Pets</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <aside class="sidebar">
+      <div class="brand">🐾 PetCare</div>
+      <p>Veterinary Clinic Management</p>
+      <nav>
+        <a class="" href="index.html">Dashboard</a
+        ><a class="" href="owners.html">Owners</a
+        ><a class="active" href="pets.html">Pets</a
+        ><a class="" href="appointments.html">Appointments</a
+        ><a class="" href="billing.html">Billing</a
+        ><a class="" href="reports.html">Reports</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="top">
+        <h1>Pets</h1>
+        <p>Pet details and registered owners.</p>
+      </header>
+      <section class="panel">
+        <h2>Pet List</h2>
+        <button class="btn" type="button" onclick="toggleForm('petForm')">
+          + Add Pet
+        </button>
+        <form class="formbox" id="petForm" data-table="petTable">
+          <div class="formgrid">
+            <label>Pet Name<input name="name" required /></label
+            ><label
+              >Type<select name="type" required>
+                <option value="">Choose</option>
+                <option>Dog</option>
+                <option>Cat</option>
+                <option>Rabbit</option>
+                <option>Bird</option>
+                <option>Other</option>
+              </select></label
+            ><label>Breed<input name="breed" /></label
+            ><label>Age<input name="age" placeholder="e.g. 2 years" /></label
+            ><label>Owner<input name="owner" required /></label>
+          </div>
+          <button class="btn" type="submit">Add to List</button
+          ><button
+            class="btn secondary"
+            type="button"
+            onclick="toggleForm('petForm')"
+          >
+            Cancel
+          </button>
+        </form>
+        <div class="tablewrap">
+          <table id="petTable">
+            <tr>
+              <th>#</th>
+              <th>Pet Name</th>
+              <th>Type</th>
+              <th>Breed</th>
+              <th>Age</th>
+              <th>Owner</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Buddy</td>
+              <td>Dog</td>
+              <td>Labrador</td>
+              <td>3 years</td>
+              <td>Rahul Sharma</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Kitty</td>
+              <td>Cat</td>
+              <td>Persian</td>
+              <td>2 years</td>
+              <td>Ananya Singh</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Max</td>
+              <td>Dog</td>
+              <td>German Shepherd</td>
+              <td>4 years</td>
+              <td>Vikram Das</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Snowy</td>
+              <td>Rabbit</td>
+              <td>White Rabbit</td>
+              <td>1 year</td>
+              <td>Priya Jain</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Charlie</td>
+              <td>Dog</td>
+              <td>Beagle</td>
+              <td>5 years</td>
+              <td>Rahul Sharma</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

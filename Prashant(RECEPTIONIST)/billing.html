@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Vet Care | Billing</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <aside class="sidebar">
+      <div class="brand">🐾Vet Care</div>
+      <p>Veterinary Clinic Management</p>
+      <nav>
+        <a class="" href="index.html">Dashboard</a
+        ><a class="" href="owners.html">Owners</a
+        ><a class="" href="pets.html">Pets</a
+        ><a class="" href="appointments.html">Appointments</a
+        ><a class="active" href="billing.html">Billing</a
+        ><a class="" href="reports.html">Reports</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="top">
+        <h1>Billing</h1>
+        <p>Invoices and amounts.</p>
+      </header>
+      <section class="panel">
+        <h2>Sample Bills</h2>
+        <button class="btn" type="button" onclick="toggleForm('billForm')">
+          + Add Bill
+        </button>
+        <form class="formbox" id="billForm" data-table="billTable">
+          <div class="formgrid">
+            <label>Bill ID<input name="id" required /></label
+            ><label>Owner<input name="owner" required /></label
+            ><label>Pet<input name="pet" required /></label
+            ><label>Service<input name="service" required /></label
+            ><label
+              >Amount (₹)<input
+                name="amount"
+                type="number"
+                min="0"
+                required /></label
+            ><label
+              >Status<select name="status">
+                <option>Pending</option>
+                <option>Paid</option>
+              </select></label
+            >
+          </div>
+          <button class="btn" type="submit">Add Bill</button
+          ><button
+            class="btn secondary"
+            type="button"
+            onclick="toggleForm('billForm')"
+          >
+            Cancel
+          </button>
+        </form>
+        <div class="tablewrap">
+          <table id="billTable">
+            <tr>
+              <th>Bill ID</th>
+              <th>Owner</th>
+              <th>Pet</th>
+              <th>Service</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+            <tr>
+              <td>INV-101</td>
+              <td>Rahul Sharma</td>
+              <td>Buddy</td>
+              <td>Vaccination</td>
+              <td>₹1,500</td>
+              <td><span class="tag">Paid</span></td>
+            </tr>
+            <tr>
+              <td>INV-102</td>
+              <td>Ananya Singh</td>
+              <td>Kitty</td>
+              <td>Consultation</td>
+              <td>₹800</td>
+              <td><span class="tag pending">Pending</span></td>
+            </tr>
+            <tr>
+              <td>INV-103</td>
+              <td>Vikram Das</td>
+              <td>Max</td>
+              <td>Dental care</td>
+              <td>₹3,200</td>
+              <td><span class="tag">Paid</span></td>
+            </tr>
+            <tr>
+              <td>INV-104</td>
+              <td>Priya Jain</td>
+              <td>Snowy</td>
+              <td>Check-up</td>
+              <td>₹700</td>
+              <td><span class="tag">Paid</span></td>
+            </tr>
+          </table>
+        </div>
+        <button class="btn secondary" onclick="window.print()">
+          Print Page
+        </button>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

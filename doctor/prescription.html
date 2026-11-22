@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescriptions | VetCare</title>
+
+    <link rel="stylesheet" href="doctor.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">
+          <span class="logo-icon">🐾</span>
+          <span>VetCare</span>
+        </div>
+
+        <div class="nav-section">
+          <p class="nav-heading">MAIN MENU</p>
+
+          <a href="doctor.html" class="nav-link">
+            <span class="nav-icon">▦</span>
+            <span>Dashboard</span>
+          </a>
+
+          <a href="patient.html" class="nav-link">
+            <span class="nav-icon">🐾</span>
+            <span>Patient</span>
+          </a>
+
+          <a href="appointment.html" class="nav-link">
+            <span class="nav-icon">▣</span>
+            <span>Appointment</span>
+          </a>
+
+          <a href="prescription.html" class="nav-link  active">
+            <span class="nav-icon">✚</span>
+            <span>Prescription</span>
+          </a>
+        </div>
+
+        <div class="sidebar-bottom">
+          <a href="../index.html" class="home-link">
+            <span class="nav-icon">⌂</span>
+            <span>Go to Home</span>
+          </a>
+        </div>
+      </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>Prescriptions</h2>
+                <p>Doctor Panel</p>
+            </div>
+        </header>
+
+
+        <!-- Heading and Add Button -->
+        <section class="prescription-heading prescription-heading-row">
+
+            <div>
+                <h1>Prescription Management 💊</h1>
+                <p>Manage pet prescriptions and treatment details.</p>
+            </div>
+
+            <label for="add-prescription-toggle" class="add-prescription-btn">
+                + Add Prescription
+            </label>
+
+        </section>
+
+
+        <!-- Popup Checkbox -->
+        <input type="checkbox" id="add-prescription-toggle" class="popup-toggle">
+
+
+        <!-- Popup -->
+        <div class="prescription-modal">
+
+            <label for="add-prescription-toggle" class="modal-overlay"></label>
+
+            <div class="prescription-modal-box">
+
+                <div class="modal-header">
+                    <div>
+                        <h2>💊 Add New Prescription</h2>
+                        <p>Enter the pet, owner and medicine details below.</p>
+                    </div>
+
+                    <label for="add-prescription-toggle" class="modal-close">×</label>
+                </div>
+
+
+                <form class="prescription-form">
+
+                    <h3 class="form-section-title">Pet & Owner Information</h3>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>Pet Name</label>
+                            <input type="text" placeholder="Enter pet name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Pet Breed</label>
+                            <input type="text" placeholder="Enter pet breed">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Pet Age</label>
+                            <input type="text" placeholder="Example: 3 Years">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Pet Gender</label>
+                            <select>
+                                <option value="">Select gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Owner Name</label>
+                            <input type="text" placeholder="Enter owner name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Owner Phone</label>
+                            <input type="tel" placeholder="Enter phone number">
+                        </div>
+
+                    </div>
+
+
+                    <h3 class="form-section-title">Medicine Information</h3>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>Medicine Name</label>
+                            <input type="text" placeholder="Enter medicine name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Dosage</label>
+                            <input type="text" placeholder="Example: 250 mg">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Frequency</label>
+                            <select>
+                                <option value="">Select frequency</option>
+                                <option>Once a day</option>
+                                <option>Twice a day</option>
+                                <option>Three times a day</option>
+                                <option>As directed</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Duration</label>
+                            <input type="text" placeholder="Example: 5 Days">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Prescription Date</label>
+                            <input type="date">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Next Visit Date</label>
+                            <input type="date">
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group instructions-group">
+                        <label>Additional Instructions</label>
+                        <textarea rows="3" placeholder="Enter medicine instructions, precautions or treatment notes..."></textarea>
+                    </div>
+
+
+                    <div class="modal-actions">
+                        <label for="add-prescription-toggle" class="cancel-prescription-btn">
+                            Cancel
+                        </label>
+
+                        <button type="button" class="save-prescription-btn">
+                            Save Prescription
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+
+        <!-- Summary Cards -->
+        <section class="prescription-summary">
+
+            <div class="summary-box">
+                <div class="summary-icon">📋</div>
+                <div>
+                    <p>Total Prescriptions</p>
+                    <h2>32</h2>
+                </div>
+            </div>
+
+            <div class="summary-box">
+                <div class="summary-icon">💊</div>
+                <div>
+                    <p>Medicines Prescribed</p>
+                    <h2>48</h2>
+                </div>
+            </div>
+
+            <div class="summary-box">
+                <div class="summary-icon">🐾</div>
+                <div>
+                    <p>Pets Treated</p>
+                    <h2>18</h2>
+                </div>
+            </div>
+
+            <div class="summary-box">
+                <div class="summary-icon">📅</div>
+                <div>
+                    <p>Today's Prescriptions</p>
+                    <h2>06</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Prescription Records -->
+        <section class="prescription-records">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Recent Prescriptions</h2>
+                    <p>Pet details, owner information and prescribed medicines</p>
+                </div>
+            </div>
+
+
+            <!-- Prescription 1 -->
+            <article class="prescription-card">
+
+                <div class="prescription-card-header">
+                    <div>
+                        <span class="prescription-id">Prescription ID: PR001</span>
+                        <h3>Bruno</h3>
+                        <p>Golden Retriever · 3 Years · Male</p>
+                    </div>
+                    <span class="prescription-date">22 Nov 2026</span>
+                </div>
+
+                <div class="prescription-owner">
+                    <strong>Owner Details</strong>
+                    <p>Rahul Sharma</p>
+                    <p>9876543210</p>
+                </div>
+
+                <div class="medicine-details">
+                    <h4>Prescribed Medicine</h4>
+                    <div class="medicine-grid">
+                        <div><span>Medicine</span><strong>Amoxicillin</strong></div>
+                        <div><span>Dosage</span><strong>250 mg</strong></div>
+                        <div><span>Frequency</span><strong>Twice a day</strong></div>
+                        <div><span>Duration</span><strong>5 Days</strong></div>
+                    </div>
+                </div>
+
+                <div class="prescription-instructions">
+                    <strong>Instructions</strong>
+                    <p>Give the medicine after meals. Ensure proper rest and drinking water.</p>
+                </div>
+
+            </article>
+
+
+            <!-- Prescription 2 -->
+            <article class="prescription-card">
+
+                <div class="prescription-card-header">
+                    <div>
+                        <span class="prescription-id">Prescription ID: PR002</span>
+                        <h3>Milo</h3>
+                        <p>Persian Cat · 2 Years · Male</p>
+                    </div>
+                    <span class="prescription-date">21 Nov 2026</span>
+                </div>
+
+                <div class="prescription-owner">
+                    <strong>Owner Details</strong>
+                    <p>Priya Verma</p>
+                    <p>9876501234</p>
+                </div>
+
+                <div class="medicine-details">
+                    <h4>Prescribed Medicine</h4>
+                    <div class="medicine-grid">
+                        <div><span>Medicine</span><strong>Antifungal Cream</strong></div>
+                        <div><span>Dosage</span><strong>Apply a thin layer</strong></div>
+                        <div><span>Frequency</span><strong>Once a day</strong></div>
+                        <div><span>Duration</span><strong>7 Days</strong></div>
+                    </div>
+                </div>
+
+                <div class="prescription-instructions">
+                    <strong>Instructions</strong>
+                    <p>Apply to the affected area. Prevent the pet from licking the treated area.</p>
+                </div>
+
+            </article>
+
+
+            <!-- Prescription 3 -->
+            <article class="prescription-card">
+
+                <div class="prescription-card-header">
+                    <div>
+                        <span class="prescription-id">Prescription ID: PR003</span>
+                        <h3>Coco</h3>
+                        <p>Labrador · 4 Years · Female</p>
+                    </div>
+                    <span class="prescription-date">20 Nov 2026</span>
+                </div>
+
+                <div class="prescription-owner">
+                    <strong>Owner Details</strong>
+                    <p>Aman Gupta</p>
+                    <p>9876512345</p>
+                </div>
+
+                <div class="medicine-details">
+                    <h4>Prescribed Medicine</h4>
+                    <div class="medicine-grid">
+                        <div><span>Medicine</span><strong>Vitamin Supplement</strong></div>
+                        <div><span>Dosage</span><strong>1 Tablet</strong></div>
+                        <div><span>Frequency</span><strong>Once a day</strong></div>
+                        <div><span>Duration</span><strong>10 Days</strong></div>
+                    </div>
+                </div>
+
+                <div class="prescription-instructions">
+                    <strong>Instructions</strong>
+                    <p>Give one tablet with food. Maintain a balanced diet.</p>
+                </div>
+
+            </article>
+
+
+            <!-- Prescription 4 -->
+            <article class="prescription-card">
+
+                <div class="prescription-card-header">
+                    <div>
+                        <span class="prescription-id">Prescription ID: PR004</span>
+                        <h3>Snowy</h3>
+                        <p>White Rabbit · 1 Year · Female</p>
+                    </div>
+                    <span class="prescription-date">18 Nov 2026</span>
+                </div>
+
+                <div class="prescription-owner">
+                    <strong>Owner Details</strong>
+                    <p>Neha Singh</p>
+                    <p>9876523456</p>
+                </div>
+
+                <div class="medicine-details">
+                    <h4>Prescribed Medicine</h4>
+                    <div class="medicine-grid">
+                        <div><span>Medicine</span><strong>Probiotic Supplement</strong></div>
+                        <div><span>Dosage</span><strong>As directed</strong></div>
+                        <div><span>Frequency</span><strong>Once a day</strong></div>
+                        <div><span>Duration</span><strong>5 Days</strong></div>
+                    </div>
+                </div>
+
+                <div class="prescription-instructions">
+                    <strong>Instructions</strong>
+                    <p>Follow the prescribed dosage and monitor eating habits.</p>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <footer class="dashboard-footer">
+            <p>© 2026 VetCare Veterinary Management System. All Rights Reserved.</p>
+        </footer>
+
+    </main>
+
+</div>
+
+</body>
+</html>

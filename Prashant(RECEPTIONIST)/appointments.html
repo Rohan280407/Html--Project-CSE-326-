@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Vet Care | Appointments</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <aside class="sidebar">
+      <div class="brand">🐾VetCare</div>
+      <p>Veterinary Clinic Management</p>
+      <nav>
+        <a class="" href="index.html">Dashboard</a
+        ><a class="" href="owners.html">Owners</a
+        ><a class="" href="pets.html">Pets</a
+        ><a class="active" href="appointments.html">Appointments</a
+        ><a class="" href="billing.html">Billing</a
+        ><a class="" href="reports.html">Reports</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="top">
+        <h1>Appointments</h1>
+        <p>Clinic appointment schedule.</p>
+      </header>
+      <section class="panel">
+        <h2>Appointment Schedule</h2>
+        <button
+          class="btn"
+          type="button"
+          onclick="toggleForm('appointmentForm')"
+        >
+          + Add Appointment
+        </button>
+        <form
+          class="formbox"
+          id="appointmentForm"
+          data-table="appointmentTable"
+        >
+          <div class="formgrid">
+            <label>Pet<input name="pet" required /></label
+            ><label>Owner<input name="owner" required /></label
+            ><label>Doctor<input name="doctor" required /></label
+            ><label>Date<input name="date" type="date" required /></label
+            ><label>Time<input name="time" type="time" required /></label
+            ><label>Reason<input name="reason" required /></label
+            ><label
+              >Status<select name="status">
+                <option>Upcoming</option>
+                <option>Waiting</option>
+                <option>Completed</option>
+                <option>Cancelled</option>
+              </select></label
+            >
+          </div>
+          <button class="btn" type="submit">Add Appointment</button
+          ><button
+            class="btn secondary"
+            type="button"
+            onclick="toggleForm('appointmentForm')"
+          >
+            Cancel
+          </button>
+        </form>
+        <div class="tablewrap">
+          <table id="appointmentTable">
+            <tr>
+              <th>Pet</th>
+              <th>Owner</th>
+              <th>Doctor</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Reason</th>
+              <th>Status</th>
+            </tr>
+            <tr>
+              <td>Buddy</td>
+              <td>Rahul Sharma</td>
+              <td>Dr. Meera</td>
+              <td>19 Nov 2026</td>
+              <td>10:00 AM</td>
+              <td>Vaccination</td>
+              <td><span class="tag">Completed</span></td>
+            </tr>
+            <tr>
+              <td>Kitty</td>
+              <td>Ananya Singh</td>
+              <td>Dr. Meera</td>
+              <td>19 Nov 2026</td>
+              <td>11:30 AM</td>
+              <td>Check-up</td>
+              <td><span class="tag pending">Waiting</span></td>
+            </tr>
+            <tr>
+              <td>Max</td>
+              <td>Vikram Das</td>
+              <td>Dr. Arjun</td>
+              <td>19 Nov 2026</td>
+              <td>1:00 PM</td>
+              <td>Dental care</td>
+              <td><span class="tag pending">Upcoming</span></td>
+            </tr>
+            <tr>
+              <td>Snowy</td>
+              <td>Priya Jain</td>
+              <td>Dr. Arjun</td>
+              <td>19 Nov 2026</td>
+              <td>3:00 PM</td>
+              <td>General check-up</td>
+              <td><span class="tag">Completed</span></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

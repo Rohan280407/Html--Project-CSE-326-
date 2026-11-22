@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Vet Care | Pet Owners</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <aside class="sidebar">
+      <div class="brand">🐾Vet Care</div>
+      <p>Veterinary Clinic Management</p>
+      <nav>
+        <a class="" href="index.html">Dashboard</a
+        ><a class="active" href="owners.html">Owners</a
+        ><a class="" href="pets.html">Pets</a
+        ><a class="" href="appointments.html">Appointments</a
+        ><a class="" href="billing.html">Billing</a
+        ><a class="" href="reports.html">Reports</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="top">
+        <h1>Pet Owners</h1>
+        <p>Owner contact information.</p>
+      </header>
+      <section class="panel">
+        <h2>Owner List</h2>
+        <button class="btn" type="button" onclick="toggleForm('ownerForm')">
+          + Add Owner
+        </button>
+        <form class="formbox" id="ownerForm" data-table="ownerTable">
+          <div class="formgrid">
+            <label>Name<input name="name" required /></label
+            ><label
+              >Phone<input
+                name="phone"
+                required
+                pattern="[0-9 +()-]{7,}" /></label
+            ><label>Email<input name="email" type="email" /></label
+            ><label>City<input name="city" /></label>
+          </div>
+          <button class="btn" type="submit">Add to List</button
+          ><button
+            class="btn secondary"
+            type="button"
+            onclick="toggleForm('ownerForm')"
+          >
+            Cancel
+          </button>
+        </form>
+        <div class="tablewrap">
+          <table id="ownerTable">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>City</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Rahul Sharma</td>
+              <td>98765 43210</td>
+              <td>rahul@example.com</td>
+              <td>Jalandhar</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Ananya Singh</td>
+              <td>98765 12345</td>
+              <td>ananya@example.com</td>
+              <td>Ludhiana</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Vikram Das</td>
+              <td>98111 22334</td>
+              <td>vikram@example.com</td>
+              <td>Amritsar</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Priya Jain</td>
+              <td>99000 11223</td>
+              <td>priya@example.com</td>
+              <td>Jalandhar</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

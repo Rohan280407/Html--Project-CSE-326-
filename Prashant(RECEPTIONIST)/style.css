@@ -1,0 +1,292 @@
+/* Universal selector: Applies these settings to all HTML elements */
+* {
+  box-sizing: border-box; /* Includes padding and border within the element's total width and height */
+  margin: 0; /* Removes default outer spacing */
+  padding: 0; /* Removes default inner spacing */
+}
+
+/* Styles the entire webpage body */
+body {
+  font-family: Arial, sans-serif; /* Sets the font style */
+  background: #f4f7fb; /* Sets a light background color */
+  color: #243247; /* Sets the default text color */
+  min-height: 100vh; /* Makes the body at least as tall as the screen */
+  display: flex; /* Places the sidebar and main content side by side */
+}
+
+/* Styles the left navigation sidebar */
+.sidebar {
+  width: 235px; /* Sets the sidebar width */
+  flex-shrink: 0; /* Prevents the sidebar from becoming smaller */
+  background: #173454; /* Sets the sidebar background color */
+  color: white; /* Sets the text color to white */
+  padding: 24px 18px; /* Adds space inside the sidebar */
+}
+
+/* Styles the clinic brand name/logo text */
+.brand {
+  font-size: 23px; /* Sets the brand text size */
+  font-weight: bold; /* Makes the brand text bold */
+  margin-bottom: 5px; /* Adds space below the brand */
+}
+
+/* Styles the paragraph inside the sidebar */
+.sidebar p {
+  color: #c4d5e6; /* Sets a light blue text color */
+  font-size: 13px; /* Sets a small font size */
+  margin-bottom: 24px; /* Adds space below the paragraph */
+}
+
+/* Styles navigation links inside the sidebar */
+.sidebar nav a {
+  display: block; /* Makes each link occupy its own line */
+  text-decoration: none; /* Removes the underline from links */
+  color: #e1ebf5; /* Sets the link text color */
+  padding: 11px 12px; /* Adds space inside each link */
+  border-radius: 8px; /* Makes link corners rounded */
+  margin: 5px 0; /* Adds space above and below each link */
+}
+
+/* Styles navigation links when hovered or when they are active */
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: #3676ad; /* Changes the link background color */
+  color: white; /* Changes the text color to white */
+}
+
+/* Styles the main content area of the webpage */
+.main {
+  width: 100%; /* Uses the available width */
+  padding: 30px; /* Adds space inside the main content */
+  max-width: 1500px; /* Prevents content from becoming too wide */
+}
+
+/* Adds spacing below the top header section */
+.top {
+  margin-bottom: 22px; /* Creates space below the header */
+}
+
+/* Styles the main heading inside the header */
+.top h1 {
+  font-size: 28px; /* Sets the heading size */
+  margin-bottom: 8px; /* Adds space below the heading */
+}
+
+/* Styles the header paragraph and note text */
+.top p,
+.note {
+  color: #718096; /* Sets a muted grey-blue text color */
+}
+
+/* Styles the dashboard cards container */
+.cards {
+  display: grid; /* Uses CSS Grid to arrange the cards */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(170px, 1fr)
+  ); /* Creates responsive columns with a minimum width of 170px */
+  gap: 15px; /* Adds space between cards */
+  margin: 20px 0; /* Adds vertical space around the cards */
+}
+
+/* Styles individual cards and content panels */
+.card,
+.panel {
+  background: white; /* Sets the background color to white */
+  border: 1px solid #e4eaf1; /* Adds a light border */
+  border-radius: 13px; /* Makes corners rounded */
+  padding: 20px; /* Adds inner spacing */
+  box-shadow: 0 4px 12px #20364a08; /* Adds a subtle shadow */
+}
+
+/* Styles the headings inside dashboard cards */
+.card h3 {
+  font-size: 14px; /* Sets the heading size */
+  color: #718096; /* Sets the heading color */
+  margin-bottom: 10px; /* Adds space below the heading */
+}
+
+/* Styles the important numbers inside dashboard cards */
+.card strong {
+  font-size: 26px; /* Makes the numbers larger */
+  color: #27669e; /* Sets the number color to blue */
+}
+
+/* Adds spacing below each content panel */
+.panel {
+  margin-bottom: 20px; /* Separates panels from each other */
+}
+
+/* Styles headings inside panels */
+.panel h2 {
+  font-size: 19px; /* Sets the panel heading size */
+  margin-bottom: 15px; /* Adds space below the heading */
+}
+
+/* Makes tables scroll horizontally when they are too wide */
+.tablewrap {
+  overflow-x: auto; /* Allows horizontal scrolling if necessary */
+}
+
+/* Styles the tables */
+table {
+  width: 100%; /* Makes the table use the full available width */
+  min-width: 600px; /* Prevents the table from becoming too narrow */
+  border-collapse: collapse; /* Removes gaps between table borders */
+}
+
+/* Styles table heading cells and regular cells */
+th,
+td {
+  text-align: left; /* Aligns text to the left */
+  padding: 12px; /* Adds space inside each cell */
+  border-bottom: 1px solid #edf1f6; /* Adds a bottom border to cells */
+  font-size: 14px; /* Sets the text size */
+}
+
+/* Styles table heading cells */
+th {
+  background: #f6f9fc; /* Sets a light background color */
+  color: #53657a; /* Sets the heading text color */
+}
+
+/* Removes the bottom border from the last row's cells */
+tr:last-child td {
+  border-bottom: 0; /* Removes the bottom border */
+}
+
+/* Styles status tags such as Paid and Completed */
+.tag {
+  background: #e9f5ee; /* Sets a light green background */
+  color: #237647; /* Sets a green text color */
+  padding: 5px 9px; /* Adds space inside the tag */
+  border-radius: 20px; /* Makes the tag pill-shaped */
+  font-size: 12px; /* Sets the tag text size */
+}
+
+/* Styles pending status tags */
+.tag.pending {
+  background: #fff3df; /* Sets a light orange background */
+  color: #a36512; /* Sets an orange-brown text color */
+}
+
+/* Styles buttons */
+.btn {
+  border: 0; /* Removes the default button border */
+  background: #2869a5; /* Sets the button background color */
+  color: white; /* Sets the button text color */
+  padding: 10px 14px; /* Adds space inside the button */
+  border-radius: 8px; /* Makes button corners rounded */
+  cursor: pointer; /* Shows a hand cursor when hovering */
+  font-size: 14px; /* Sets the button text size */
+  margin: 5px 4px 12px 0; /* Adds space around the button */
+}
+
+/* Changes the button background when the mouse hovers over it */
+.btn:hover {
+  background: #1c4f80; /* Darkens the button background */
+}
+
+/* Styles secondary buttons differently */
+.btn.secondary {
+  background: #64748b; /* Sets a grey background color */
+}
+
+/* Styles the form container which is hidden by default */
+.formbox {
+  display: none; /* Hides the form initially */
+  background: #f7fafc; /* Sets a light background color */
+  border: 1px solid #dce5ef; /* Adds a light border */
+  border-radius: 10px; /* Makes form corners rounded */
+  padding: 18px; /* Adds space inside the form */
+  margin: 12px 0 18px; /* Adds space around the form */
+}
+
+/* Displays the form when the show class is added */
+.formbox.show {
+  display: block; /* Makes the form visible */
+}
+
+/* Arranges form fields in a responsive grid */
+.formgrid {
+  display: grid; /* Uses CSS Grid for form layout */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(190px, 1fr)
+  ); /* Creates responsive form columns */
+  gap: 13px; /* Adds space between form fields */
+}
+
+/* Styles labels inside the form */
+.formgrid label {
+  display: block; /* Places the label on its own line */
+  font-size: 13px; /* Sets the label text size */
+  font-weight: bold; /* Makes labels bold */
+  color: #4b5d70; /* Sets the label text color */
+}
+
+/* Styles input fields, dropdowns and textareas */
+.formgrid input,
+.formgrid select,
+.formgrid textarea {
+  width: 100%; /* Makes the input use the full available width */
+  margin-top: 6px; /* Adds space above the input */
+  padding: 10px; /* Adds inner spacing */
+  border: 1px solid #cbd5e1; /* Adds a light border */
+  border-radius: 7px; /* Makes corners rounded */
+  font: inherit; /* Uses the font of the parent element */
+  background: white; /* Sets the background color */
+}
+
+/* Styles textarea fields */
+.formgrid textarea {
+  resize: vertical; /* Allows the user to resize vertically */
+}
+
+/* Styles small note text */
+.note {
+  font-size: 13px; /* Sets the note text size */
+  margin-top: 12px; /* Adds space above the note */
+}
+
+/* Styles messages shown when a table or section is empty */
+.empty {
+  color: #738197; /* Sets a muted text color */
+  font-style: italic; /* Makes the text italic */
+}
+
+/* Applies responsive styles when the screen width is 720px or less */
+@media (max-width: 720px) {
+  /* Changes the body layout for smaller screens */
+  body {
+    display: block; /* Stacks the sidebar and main content vertically */
+  }
+
+  /* Adjusts the sidebar for mobile screens */
+  .sidebar {
+    width: 100%; /* Makes the sidebar full width */
+    padding: 16px; /* Reduces sidebar padding */
+  }
+
+  /* Arranges sidebar navigation links on smaller screens */
+  .sidebar nav {
+    display: flex; /* Uses Flexbox for navigation links */
+    flex-wrap: wrap; /* Allows links to move to the next line */
+  }
+
+  /* Adjusts navigation link spacing on smaller screens */
+  .sidebar nav a {
+    padding: 9px; /* Reduces link padding */
+    margin: 3px; /* Reduces link margins */
+  }
+
+  /* Adjusts the main content area on smaller screens */
+  .main {
+    padding: 18px; /* Reduces main content padding */
+  }
+
+  /* Reduces heading size on smaller screens */
+  .top h1 {
+    font-size: 24px; /* Makes the main heading smaller */
+  }
+}
